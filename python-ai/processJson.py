@@ -9,9 +9,8 @@ from PIL import Image
 import torch
 from io import BytesIO
 import aiohttp
-import asyncio
 import random
-
+import asyncio
 
 # Start time for the script
 start = time.time()
@@ -21,11 +20,8 @@ load_dotenv()
 key = os.getenv("key")
 
 # Load the JSON file containing NFT data
-with open("nft_data.json", "r") as file:
+with open("aiJson/nft_data.json", "r") as file:
     nft_data = json.load(file)
-
-# Extract image URLs from the cached URLs in the JSON data
-image_urls = [nft["image"]["cachedUrl"] for nft in nft_data]
 
 # Define categories for classification
 character_labels = [
@@ -72,7 +68,6 @@ classifier = pipeline("zero-shot-classification", model="MoritzLaurer/DeBERTa-v3
 image_cache_dir = "image_cache"
 os.makedirs(image_cache_dir, exist_ok=True)
 
-
 # Describe the image using Groq API (Llama)
 def describe_image_with_groq(encoded_image):
     prompt = "Describe the image and important defining traits in a descriptive 10-word or less sentence."
@@ -99,7 +94,6 @@ def describe_image_with_groq(encoded_image):
     except Exception as e:
         print(f"Failed to process image with Groq: {e}")
         return None
-
 
 # Function to classify an image description and get confidence scores
 def classify_description(description, nft_rarities, character_threshold=0.3, equipment_threshold=0.3):
@@ -159,28 +153,27 @@ def classify_description(description, nft_rarities, character_threshold=0.3, equ
 
         # Check if the confidence levels meet the threshold, otherwise set the category to "Other"
         if highest_character_confidence >= character_threshold:
-            final_category = "Character"
+            return "Character", None
         elif highest_equipment_confidence >= equipment_threshold:
             # Choose the equipment category with the highest confidence
-            final_category = max(
+            equipment_type = max(
                 ["Ranged Weapon", "Melee Weapon", "Magic Weapon", "Explosive Weapon", "Defense"],
                 key=lambda cat: boosted_scores[cat]
             )
+            return "Equipment", equipment_type
         else:
-            final_category = "Other"
+            return "Other", None
 
-        return final_category
-
-    return "Other"
+    return "Other", None
 
 
 # Helper function to generate a stat based on the floor price and prevalence
 def generate_stat(floor_price, prevalence, stat_type="general"):
-    base_stat = 1 + floor_price * 65  # Base stat scaled by floor price (range 1-100)
+    base_stat = 1 + floor_price * 70  # Base stat scaled by floor price (range 1-100)
     rarity_multiplier = (1 - prevalence) * 35  # Rarer traits give a higher bonus
 
-    # Add randomness to the final stat (small random factor +/- 45% around the calculated stat)
-    random_factor = random.uniform(-0.45, 0.45)
+    # Add randomness to the final stat (small random factor +/- 25% around the calculated stat)
+    random_factor = random.uniform(-0.15, 0.15)
 
     # Final stat is base stat plus rarity bonus with added randomness
     final_stat = base_stat + rarity_multiplier * 0.5
@@ -191,54 +184,19 @@ def generate_stat(floor_price, prevalence, stat_type="general"):
 
 
 # Generate stats based on floor price and trait prevalence
-# Function to generate stats based on category, floor price, and trait prevalence, with randomness
-def generate_stats(category, floor_price=0, rarity=None, equipment_details=None):
+def generate_stats(category, equipment_type, floor_price=0, rarity=None):
     if category == "Character":
-        health = 0
-        intelligence = 0
-        stamina = 0
-        if rarity and "rarities" in rarity:
-            for trait in rarity["rarities"]:
-                prevalence = trait.get("prevalence", 1)
-                health = generate_stat(floor_price, prevalence, "health")
-                intelligence = generate_stat(floor_price, prevalence, "intelligence")
-                stamina = generate_stat(floor_price, prevalence, "stamina")
-        else:
-            # In case there are no traits, generate stats with some randomness
-            health = generate_stat(floor_price, random.uniform(0.2, 0.8), "health")
-            intelligence = generate_stat(floor_price, random.uniform(0.2, 0.8), "intelligence")
-            stamina = generate_stat(floor_price, random.uniform(0.2, 0.8), "stamina")
+        health = generate_stat(floor_price, random.uniform(0.2, 0.8), "health")
+        intelligence = generate_stat(floor_price, random.uniform(0.2, 0.8), "intelligence")
+        stamina = generate_stat(floor_price, random.uniform(0.2, 0.8), "stamina")
         return {
             "Health": health,
             "Intelligence": intelligence,
             "Stamina": stamina
         }
-    elif category == "Defense":
-        defense = 0
-        durability = 0
-        if rarity and "rarities" in rarity:
-            for trait in rarity["rarities"]:
-                prevalence = trait.get("prevalence", 1)
-                defense = generate_stat(floor_price, prevalence, "defense")
-                durability = generate_stat(floor_price, prevalence, "durability")
-        else:
-            defense = generate_stat(floor_price, random.uniform(0.2, 0.8), "defense")
-            durability = generate_stat(floor_price, random.uniform(0.2, 0.8), "durability")
-        return {
-            "Defense": defense,
-            "Durability": durability
-        }
-    elif category in ["Ranged Weapon", "Melee Weapon", "Magic Weapon", "Explosive Weapon"]:
-        attack = 0
-        durability = 0
-        if rarity and "rarities" in rarity:
-            for trait in rarity["rarities"]:
-                prevalence = trait.get("prevalence", 1)
-                attack = generate_stat(floor_price, prevalence, "attack")
-                durability = generate_stat(floor_price, prevalence, "durability")
-        else:
-            attack = generate_stat(floor_price, random.uniform(0.2, 0.8), "attack")
-            durability = generate_stat(floor_price, random.uniform(0.2, 0.8), "durability")
+    elif category == "Equipment" and equipment_type:
+        attack = generate_stat(floor_price, random.uniform(0.2, 0.8), "attack")
+        durability = generate_stat(floor_price, random.uniform(0.2, 0.8), "durability")
         return {
             "Attack": attack,
             "Durability": durability
@@ -253,69 +211,81 @@ def generate_stats(category, floor_price=0, rarity=None, equipment_details=None)
             "Attack": None
         }
 
-
 # Process the images and classify each one
-async def process_nft_images(nft_data):
-    async with aiohttp.ClientSession() as session:
-        processed_nfts = []
-        download_count = 0  # Initialize a counter for successful downloads
+def process_image(nft):
+    image_url = nft["image"]["cachedUrl"]
+    floor_price = nft.get("floor_price", 0)
+    rarity = nft.get("rarity", None)
 
-        for nft in nft_data:
-            if download_count >= 5:  # Stop processing after 5 successful downloads
-                break
+    try:
+        # Attempt to download the image asynchronously
+        async def download_image(image_url):
+            # Check if the image is already in the cache
+            image_filename = os.path.join(image_cache_dir, os.path.basename(image_url))
+            if os.path.exists(image_filename):
+                with open(image_filename, "rb") as img_file:
+                    return base64.b64encode(img_file.read()).decode("utf-8")
 
-            image_url = nft["image"]["cachedUrl"]
-            floor_price = nft.get("floor_price", 0)
-            rarity = nft.get("rarity", None)
-
-            try:
-                # Attempt to download the image
+            # Download the image if not cached
+            async with aiohttp.ClientSession() as session:
                 async with session.get(image_url, ssl=False) as response:
                     if response.status == 200:
                         image_data = await response.read()
+                        # Save the image to cache
+                        with open(image_filename, "wb") as img_file:
+                            img_file.write(image_data)
                         image = Image.open(BytesIO(image_data)).convert("RGBA")
-
                         buffered = BytesIO()
                         image.save(buffered, format="PNG")
-                        encoded_image = base64.b64encode(buffered.getvalue()).decode("utf-8")
+                        return base64.b64encode(buffered.getvalue()).decode("utf-8")
+            return None
 
-                        # Use LLaMA to generate a description of the image
-                        description = describe_image_with_groq(encoded_image)
-                        if description:
-                            print(f"Description: {description}")
+        encoded_image = asyncio.run(download_image(image_url))
+        if encoded_image:
+            # Use LLaMA to generate a description of the image
+            description = describe_image_with_groq(encoded_image)
+            if description:
+                print(f"Description: {description}")
 
-                            # Use DeBERTa to classify the description and pass rarity as nft_rarities
-                            category = classify_description(description, rarity)  # Pass the `rarity` here
-                            print(f"Category: {category}")
+                # Use DeBERTa to classify the description
+                category, equipment_type = classify_description(description, rarity)
+                print(f"Category: {category}, Equipment Type: {equipment_type}")
 
-                            # Generate stats based on category, floor price, and trait prevalence
-                            traits = generate_stats(category, floor_price, rarity)
+                # Generate stats based on category, floor price, and trait prevalence
+                traits = generate_stats(category, equipment_type, floor_price, rarity)
 
-                            nft["AICategory"] = {
-                                "value": category,
-                                "traits": traits
-                            }
-                            processed_nfts.append(nft)
+                nft["AICategory"] = {
+                    "value": category,
+                    "equipment_type": equipment_type if equipment_type else None,
+                    "traits": traits
+                }
+        return nft
 
-                            # Increment the counter for successfully processed NFTs
-                            download_count += 1
+    except Exception as e:
+        print(f"Failed to process image from {image_url}: {e}")
+        return None
 
-            except Exception as e:
-                print(f"Failed to process image from {image_url}: {e}")
-
+# Multiprocessing wrapper to handle multiple image downloads and processing
+def process_nft_images_multiprocessing(nft_data):
+    processed_nfts = []
+    index = 0
+    while len(processed_nfts) < 5 and index < len(nft_data):
+        nft = nft_data[index]
+        processed_nft = process_image(nft)
+        if processed_nft and "AICategory" in processed_nft:
+            processed_nfts.append(processed_nft)
+        index += 1
     return processed_nfts
-
-
 
 # Save the updated JSON data to a new file
 def save_updated_json(updated_nft_data):
-    with open("updated_nft_data.json", "w") as file:
-        json.dump(updated_nft_data, file, indent=4)
-
+    output = {"NFT_Data": [nft for nft in updated_nft_data if nft is not None]}
+    with open("aiJson/updated_nft_data.json", "w") as file:
+        json.dump(output, file, indent=4)
 
 if __name__ == "__main__":
-    # Process the NFTs and generate the stats
-    updated_nft_data = asyncio.run(process_nft_images(nft_data))
+    # Process the NFTs and generate the stats using multiprocessing
+    updated_nft_data = process_nft_images_multiprocessing(nft_data)
 
     # Save the updated JSON with the new stats
     save_updated_json(updated_nft_data)

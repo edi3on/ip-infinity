@@ -40,6 +40,7 @@
             },
             "AICategory": {
                 "value": "Other",
+                "equipment_type": null,
                 "traits": {
                     "Health": null,
                     "Intelligence": null,
@@ -131,10 +132,11 @@
             },
             "AICategory": {
                 "value": "Character",
+                "equipment_type": null,
                 "traits": {
-                    "Health": 18,
-                    "Intelligence": 18,
-                    "Stamina": 19
+                    "Health": 14,
+                    "Intelligence": 20,
+                    "Stamina": 9
                 }
             }
         },
@@ -219,10 +221,11 @@
             },
             "AICategory": {
                 "value": "Character",
+                "equipment_type": null,
                 "traits": {
                     "Health": 13,
-                    "Intelligence": 15,
-                    "Stamina": 13
+                    "Intelligence": 14,
+                    "Stamina": 15
                 }
             }
         },
@@ -297,10 +300,11 @@
             },
             "AICategory": {
                 "value": "Character",
+                "equipment_type": null,
                 "traits": {
-                    "Health": 17,
-                    "Intelligence": 17,
-                    "Stamina": 15
+                    "Health": 11,
+                    "Intelligence": 14,
+                    "Stamina": 13
                 }
             }
         },
@@ -349,10 +353,11 @@
                 ]
             },
             "AICategory": {
-                "value": "Melee Weapon",
+                "value": "Equipment",
+                "equipment_type": "Melee Weapon",
                 "traits": {
-                    "Attack": 8,
-                    "Durability": 8
+                    "Attack": 11,
+                    "Durability": 16
                 }
             }
         }
