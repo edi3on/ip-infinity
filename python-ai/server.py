@@ -13,7 +13,7 @@ import requests
 import time
 import uvicorn
 from operator import itemgetter
-ALCHEMY_API_KEY = 'hq0Yd8sbFspswnR4eKfPiMLlQgG7PL5R'
+ALCHEMY_API_KEY = ''
 
 app = FastAPI()
 
