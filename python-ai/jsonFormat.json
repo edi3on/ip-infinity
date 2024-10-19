@@ -1,0 +1,360 @@
+{
+    "NFT_Data": [
+        {
+            "contract": {
+                "address": "0x3Af2A97414d1101E2107a70E7F33955da1346305",
+                "name": "MysteryBean",
+                "symbol": "MBEAN",
+                "totalSupply": "3597",
+                "tokenType": "ERC721",
+                "contractDeployer": "0x48dcfD6fe331348600A377dfEB0AB3Db0a415f88",
+                "deployedBlockNumber": 17483014,
+                "openSeaMetadata": {
+                    "floorPrice": 1.078,
+                    "collectionName": "Azuki Elemental Beans",
+                    "collectionSlug": "azukielementalbeans",
+                    "safelistRequestStatus": "verified",
+                    "imageUrl": "https://i.seadn.io/gcs/files/f3a499dc27479c0c0fd6aaa3f6581561.gif?w=500&auto=format",
+                    "description": "Azuki Elemental Beans can be consumed to take you into the Garden, revealing your Azuki Elemental. Reveal available immediately after the sale closes. \r\n\r\nFind your domain. Be in your element.\r\n\r\nazuki.com/elementals",
+                    "externalUrl": null,
+                    "twitterUsername": null,
+                    "discordUrl": null,
+                    "bannerImageUrl": "https://i.seadn.io/gcs/files/f0613a60a26a9241b85456ad2b68673b.jpg?w=500&auto=format",
+                    "lastIngestedAt": "2024-10-17T20:28:40.000Z"
+                },
+                "isSpam": null,
+                "spamClassifications": []
+            },
+            "tokenId": "19592",
+            "image": {
+                "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/3c9331ff4a5ab1c17ff7fc88ceaf2ce3",
+                "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/3c9331ff4a5ab1c17ff7fc88ceaf2ce3",
+                "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/3c9331ff4a5ab1c17ff7fc88ceaf2ce3",
+                "contentType": "image/gif",
+                "size": 1681423,
+                "originalUrl": "https://elementals-images.azuki.com/1.gif"
+            },
+            "floor_price": 1.078,
+            "rarity": {
+                "rarities": []
+            },
+            "AICategory": {
+                "value": "Other",
+                "traits": {
+                    "Health": null,
+                    "Intelligence": null,
+                    "Stamina": null,
+                    "Durability": null,
+                    "Defense": null,
+                    "Attack": null
+                }
+            }
+        },
+        {
+            "contract": {
+                "address": "0x86CC280D0BAC0BD4Ea38ba7d31e895Aa20Cceb4b",
+                "name": "Karma",
+                "symbol": "KARMA",
+                "totalSupply": "13194",
+                "tokenType": "ERC721",
+                "contractDeployer": "0x164E0D92eED7C397C675FEDE671b49cE2B289d1F",
+                "deployedBlockNumber": 15036893,
+                "openSeaMetadata": {
+                    "floorPrice": 0.058999,
+                    "collectionName": "OCM Karma",
+                    "collectionSlug": "karma-monkey",
+                    "safelistRequestStatus": "verified",
+                    "imageUrl": "https://i.seadn.io/gcs/files/823f19c0c5c983ebe9c022833605d099.png?w=500&auto=format",
+                    "description": "The OCM Karma collection is the hand-painted generative art collection by our Academy Award-nominated art and design team that took over 9 months to create. To this day, the Karma collection remains one of the most detailed hand-painted art collections on Ethereum, with 49 layers used to generate the images to create the relationships between the hundreds of traits. Buying a Karma now enables you to upgrade your Karma to a digital artifact on Bitcoin. A rare Karma on Ethereum is a rare Karma on Bitcoin, all on block 78 satoshis (sats). Become a Karma owner and join the OCM community where you can be part of the network of the greatest minds in Web3. \n\nKarma1 are Type Incredible.\nKarma2 are Type Divine.\nKarma3 are type Celestial.\n\nGenesis: https://opensea.io/collection/onchainmonkey\n\nDesserts: https://opensea.io/collection/ocm-dessert",
+                    "externalUrl": null,
+                    "twitterUsername": "OnChainMonkey",
+                    "discordUrl": "https://discord.gg/ocm",
+                    "bannerImageUrl": "https://i.seadn.io/gcs/files/75a3413c93ef781ec5d9c3762cecf4ef.jpg?w=500&auto=format",
+                    "lastIngestedAt": "2024-10-10T20:51:09.000Z"
+                },
+                "isSpam": null,
+                "spamClassifications": []
+            },
+            "tokenId": "2780",
+            "image": {
+                "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/f0daba2c45b5b7fbc13a8b523a9ff38c",
+                "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/f0daba2c45b5b7fbc13a8b523a9ff38c",
+                "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/f0daba2c45b5b7fbc13a8b523a9ff38c",
+                "contentType": "image/png",
+                "size": 299238,
+                "originalUrl": "https://ipfs.io/ipfs/bafybeifzsdjsyhuzvxvprgfkorqylan63ptbsgkv45qwcu7tbrrdp3pqsq/3964"
+            },
+            "floor_price": 0.058999,
+            "rarity": {
+                "rarities": [
+                    {
+                        "traitType": "Type",
+                        "value": "Incredible",
+                        "prevalence": 0.7460194924249735
+                    },
+                    {
+                        "traitType": "Background",
+                        "value": "Ocean",
+                        "prevalence": 0.09225127858728167
+                    },
+                    {
+                        "traitType": "Fur",
+                        "value": "K1 Onyx",
+                        "prevalence": 0.08752291807391682
+                    },
+                    {
+                        "traitType": "Eyes",
+                        "value": "Calm Hazel",
+                        "prevalence": 0.027501688700183345
+                    },
+                    {
+                        "traitType": "Mouth",
+                        "value": "Pink Smirk",
+                        "prevalence": 0.049985525426999904
+                    },
+                    {
+                        "traitType": "Earring",
+                        "value": "None",
+                        "prevalence": 0.6883141947312554
+                    },
+                    {
+                        "traitType": "Clothes",
+                        "value": "None",
+                        "prevalence": 0.20389848499469265
+                    },
+                    {
+                        "traitType": "Hat",
+                        "value": "OG Snapback",
+                        "prevalence": 0.02277332818681849
+                    }
+                ]
+            },
+            "AICategory": {
+                "value": "Character",
+                "traits": {
+                    "Health": 18,
+                    "Intelligence": 18,
+                    "Stamina": 19
+                }
+            }
+        },
+        {
+            "contract": {
+                "address": "0x86CC280D0BAC0BD4Ea38ba7d31e895Aa20Cceb4b",
+                "name": "Karma",
+                "symbol": "KARMA",
+                "totalSupply": "13194",
+                "tokenType": "ERC721",
+                "contractDeployer": "0x164E0D92eED7C397C675FEDE671b49cE2B289d1F",
+                "deployedBlockNumber": 15036893,
+                "openSeaMetadata": {
+                    "floorPrice": 0.058999,
+                    "collectionName": "OCM Karma",
+                    "collectionSlug": "karma-monkey",
+                    "safelistRequestStatus": "verified",
+                    "imageUrl": "https://i.seadn.io/gcs/files/823f19c0c5c983ebe9c022833605d099.png?w=500&auto=format",
+                    "description": "The OCM Karma collection is the hand-painted generative art collection by our Academy Award-nominated art and design team that took over 9 months to create. To this day, the Karma collection remains one of the most detailed hand-painted art collections on Ethereum, with 49 layers used to generate the images to create the relationships between the hundreds of traits. Buying a Karma now enables you to upgrade your Karma to a digital artifact on Bitcoin. A rare Karma on Ethereum is a rare Karma on Bitcoin, all on block 78 satoshis (sats). Become a Karma owner and join the OCM community where you can be part of the network of the greatest minds in Web3. \n\nKarma1 are Type Incredible.\nKarma2 are Type Divine.\nKarma3 are type Celestial.\n\nGenesis: https://opensea.io/collection/onchainmonkey\n\nDesserts: https://opensea.io/collection/ocm-dessert",
+                    "externalUrl": null,
+                    "twitterUsername": "OnChainMonkey",
+                    "discordUrl": "https://discord.gg/ocm",
+                    "bannerImageUrl": "https://i.seadn.io/gcs/files/75a3413c93ef781ec5d9c3762cecf4ef.jpg?w=500&auto=format",
+                    "lastIngestedAt": "2024-10-10T20:51:09.000Z"
+                },
+                "isSpam": null,
+                "spamClassifications": []
+            },
+            "tokenId": "10312",
+            "image": {
+                "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/ac181ea78d03b3e7a3f34ebd92240794",
+                "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/ac181ea78d03b3e7a3f34ebd92240794",
+                "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/ac181ea78d03b3e7a3f34ebd92240794",
+                "contentType": "image/png",
+                "size": 353203,
+                "originalUrl": "https://ipfs.io/ipfs/bafybeifzsdjsyhuzvxvprgfkorqylan63ptbsgkv45qwcu7tbrrdp3pqsq/10312"
+            },
+            "floor_price": 0.058999,
+            "rarity": {
+                "rarities": [
+                    {
+                        "traitType": "Type",
+                        "value": "Incredible",
+                        "prevalence": 0.7460194924249735
+                    },
+                    {
+                        "traitType": "Background",
+                        "value": "River",
+                        "prevalence": 0.0934092444272894
+                    },
+                    {
+                        "traitType": "Fur",
+                        "value": "K1 Wood",
+                        "prevalence": 0.09784811348065232
+                    },
+                    {
+                        "traitType": "Eyes",
+                        "value": "Piercing Green",
+                        "prevalence": 0.018334459133455563
+                    },
+                    {
+                        "traitType": "Mouth",
+                        "value": "Charcoal Focused",
+                        "prevalence": 0.01727299044678182
+                    },
+                    {
+                        "traitType": "Earring",
+                        "value": "None",
+                        "prevalence": 0.6883141947312554
+                    },
+                    {
+                        "traitType": "Clothes",
+                        "value": "Banana Party",
+                        "prevalence": 0.011965647013413105
+                    },
+                    {
+                        "traitType": "Hat",
+                        "value": "Mummy",
+                        "prevalence": 0.010228698253401525
+                    }
+                ]
+            },
+            "AICategory": {
+                "value": "Character",
+                "traits": {
+                    "Health": 13,
+                    "Intelligence": 15,
+                    "Stamina": 13
+                }
+            }
+        },
+        {
+            "contract": {
+                "address": "0x29714cAfE792EF8B8c649451d13c89E21A0D7F5b",
+                "name": "CryptoApes",
+                "symbol": "CRAP",
+                "totalSupply": "6969",
+                "tokenType": "ERC721",
+                "contractDeployer": "0x0c6e451963aeCE79C3551e13c9915be6160449bC",
+                "deployedBlockNumber": 13903679,
+                "openSeaMetadata": {
+                    "floorPrice": 0.027999,
+                    "collectionName": "CryptoApes Official",
+                    "collectionSlug": "cryptoapes-official",
+                    "safelistRequestStatus": "verified",
+                    "imageUrl": "https://i.seadn.io/gae/3lpmqtV5jHIGRb8MD4Ps4habSGNHm6zy2Kq1_hVKBflluFoEHDW9Hek6ZkRWeVAWwHp9dqbN8nQub3XsnUb2QYyyl787gkPSps0EUA?w=500&auto=format",
+                    "description": "CryptoApes is the original BAYC/Punks crossover, offered as a free mint on Dec 31, 2021.",
+                    "externalUrl": null,
+                    "twitterUsername": "CryptoApes",
+                    "discordUrl": "https://discord.gg/YJ2nSMT44v",
+                    "bannerImageUrl": "https://i.seadn.io/gae/u0azOCy44P7MTbLi-bDGaf7Um94kZ_EryiV4Ub6cBqL30WpmtrO8n8N02ThXm60fEc4m2diB-zUPMQR4Gcm7R1gw60B5W4kQ-Oel5A?w=500&auto=format",
+                    "lastIngestedAt": "2024-10-13T03:29:00.000Z"
+                },
+                "isSpam": null,
+                "spamClassifications": []
+            },
+            "tokenId": "6069",
+            "image": {
+                "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/355bcd4a74c9d9b68b6e901f25c08c4d",
+                "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/355bcd4a74c9d9b68b6e901f25c08c4d",
+                "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/355bcd4a74c9d9b68b6e901f25c08c4d",
+                "contentType": "image/png",
+                "size": 3037,
+                "originalUrl": "https://ipfs.io/ipfs/QmZFnUm3bjSyEPrvxEa3fR9eUxnkfQeLmPTzDhAmCWtbMZ/6069.png"
+            },
+            "floor_price": 0.027999,
+            "rarity": {
+                "rarities": [
+                    {
+                        "traitType": "Background",
+                        "value": "Blue",
+                        "prevalence": 0.12369062993255847
+                    },
+                    {
+                        "traitType": "Fur",
+                        "value": "Gold",
+                        "prevalence": 0.09857942315970727
+                    },
+                    {
+                        "traitType": "Mouth",
+                        "value": "Mask",
+                        "prevalence": 0.08681302912899985
+                    },
+                    {
+                        "traitType": "Clothes",
+                        "value": "Bone_Necklace",
+                        "prevalence": 0.056105610561056105
+                    },
+                    {
+                        "traitType": "Hat",
+                        "value": "Hat",
+                        "prevalence": 0.12971731955804275
+                    },
+                    {
+                        "traitType": "Eyes",
+                        "value": "Laser",
+                        "prevalence": 0.052948773138183386
+                    }
+                ]
+            },
+            "AICategory": {
+                "value": "Character",
+                "traits": {
+                    "Health": 17,
+                    "Intelligence": 17,
+                    "Stamina": 15
+                }
+            }
+        },
+        {
+            "contract": {
+                "address": "0x126A45fFc33c67d979CCBcDc598D0764660a01Cb",
+                "name": "AppliedPrimate Equipment",
+                "symbol": "EQUIPMENT",
+                "totalSupply": null,
+                "tokenType": "ERC721",
+                "contractDeployer": "0x3f7906D1Bba4911dfFC3FA1f97F7feF4A5a3034C",
+                "deployedBlockNumber": 16637528,
+                "openSeaMetadata": {
+                    "floorPrice": 0.009399,
+                    "collectionName": "MegaForce Equipment",
+                    "collectionSlug": "megaforce-equipment",
+                    "safelistRequestStatus": "verified",
+                    "imageUrl": "https://i.seadn.io/gcs/files/d1968416abb27f6d786d1efb6d6b1e77.jpg?w=500&auto=format",
+                    "description": "Equipment and materials for the MegaForce Sentinels. ",
+                    "externalUrl": null,
+                    "twitterUsername": "AppliedPrimate",
+                    "discordUrl": "https://discord.gg/appliedprimate",
+                    "bannerImageUrl": "https://i.seadn.io/gcs/files/6858652a10e7bcee013f11af83b0629a.png?w=500&auto=format",
+                    "lastIngestedAt": "2024-10-11T07:31:45.000Z"
+                },
+                "isSpam": null,
+                "spamClassifications": []
+            },
+            "tokenId": "5137",
+            "image": {
+                "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/789abb2a0aaa3eca477a6a511715144b",
+                "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/789abb2a0aaa3eca477a6a511715144b",
+                "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/789abb2a0aaa3eca477a6a511715144b",
+                "contentType": "image/png",
+                "size": 5874901,
+                "originalUrl": "https://d5mdmpsfijvqb.cloudfront.net/MutantAxe.png"
+            },
+            "floor_price": 0.009399,
+            "rarity": {
+                "rarities": [
+                    {
+                        "traitType": "Rarity",
+                        "value": "Common",
+                        "prevalence": 0.56
+                    }
+                ]
+            },
+            "AICategory": {
+                "value": "Melee Weapon",
+                "traits": {
+                    "Attack": 8,
+                    "Durability": 8
+                }
+            }
+        }
+    ]
+}
