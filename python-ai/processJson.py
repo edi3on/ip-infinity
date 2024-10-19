@@ -11,8 +11,7 @@ from io import BytesIO
 import aiohttp
 import asyncio
 import random
-from multiprocessing import Pool, cpu_count
-import cairosvg
+
 
 # Start time for the script
 start = time.time()
@@ -22,7 +21,7 @@ load_dotenv()
 key = os.getenv("key")
 
 # Load the JSON file containing NFT data
-with open("../../../../PycharmProjects/LlamaImage/nft_data.json", "r") as file:
+with open("nft_data.json", "r") as file:
     nft_data = json.load(file)
 
 # Extract image URLs from the cached URLs in the JSON data
@@ -70,7 +69,7 @@ classifier = pipeline("zero-shot-classification", model="MoritzLaurer/DeBERTa-v3
                       device=0 if torch.cuda.is_available() else -1, batch_size=32)
 
 # Cache directory for images
-image_cache_dir = "../../../../PycharmProjects/LlamaImage/image_cache"
+image_cache_dir = "image_cache"
 os.makedirs(image_cache_dir, exist_ok=True)
 
 
@@ -310,7 +309,7 @@ async def process_nft_images(nft_data):
 
 # Save the updated JSON data to a new file
 def save_updated_json(updated_nft_data):
-    with open("../../../../PycharmProjects/LlamaImage/updated_nft_data.json", "w") as file:
+    with open("updated_nft_data.json", "w") as file:
         json.dump(updated_nft_data, file, indent=4)
 
 
