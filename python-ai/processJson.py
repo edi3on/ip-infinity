@@ -1,6 +1,7 @@
 import os
 import json
 import time
+import multiprocessing
 from dotenv import load_dotenv
 from groq import Groq
 import base64
@@ -9,8 +10,8 @@ from PIL import Image
 import torch
 from io import BytesIO
 import aiohttp
-import random
 import asyncio
+import random
 
 # Start time for the script
 start = time.time()
@@ -25,31 +26,19 @@ with open("aiJson/nft_data.json", "r") as file:
 
 # Define categories for classification
 character_labels = [
-    "Animal", "Person", "Man", "Woman", "Child", "Human", "Alien", "Monster", "Robot", "Creature", "Skeleton", "Insect"
-]
+    "animal", "person", "man", "woman", "child", "human", "alien", "monster", "robot", "creature", "skeleton", "insect"]
 ranged_weapon_labels = [
-    "Bow", "Crossbow", "Arrow", "Flamethrower", "Sling shot", "Kunai", "Shuriken", "Catapult", "Gun", "Rifle", "Bullet",
-    "Machine gun", "Pistol"
-]
+    "bow", "crossbow", "arrow", "flamethrower", "sling shot", "kunai", "shuriken", "catapult", "gun", "rifle", "bullet",
+    "machine gun", "pistol"]
 melee_weapon_labels = [
-    "Axe", "Sword", "Blade", "Dagger", "Flail", "Mace", "Spear", "Club", "Quarterstaff", "Warhammer", "Knife",
-    "War scythe", "Baton", "Pickaxe"
-]
+    "axe", "sword", "blade", "dagger", "flail", "mace", "spear", "club", "quarterstaff", "warhammer", "knife",
+    "war scythe", "baton", "pickaxe"]
 magic_weapon_labels = [
-    "Magic Staff", "Wand", "Spellbook", "Scepter"
-]
+    "magic staff", "wand", "spellbook", "scepter"]
 explosive_weapon_labels = [
-    "Bomb", "Dynamite", "Rocket launcher", "Cannon"
-]
+    "bomb", "dynamite", "rocket launcher", "cannon"]
 defense_labels = [
-    "Clothing", "Mask", "Shoe", "Shirt", "Pants", "Jacket", "Sweater", "Shield", "Armor"
-]
-character_boost_list = ["fur", "eye", "eyes", "mouth", "skin", "face", "hair", "head", "neck", "body", "birth-chain", "ethnicity", "complexion", "ear", "eyeball", "nose", "teeth", "hand", "leg"]
-ranged_weapon_boost_list = ["ammo", "calibre", "scope"]
-melee_weapon_boost_list = ["blade", "sharpness"]
-magic_weapon_boost_list = ["mana"]
-explosive_weapon_boost_list = []
-defense_boost_list = ["defense"]
+    "clothing", "mask", "shoe", "shirt", "pants", "jacket", "sweater", "shield", "armor"]
 
 # Initialize Groq client for LLaMA
 client = Groq(api_key=key)
@@ -67,6 +56,7 @@ classifier = pipeline("zero-shot-classification", model="MoritzLaurer/DeBERTa-v3
 # Cache directory for images
 image_cache_dir = "image_cache"
 os.makedirs(image_cache_dir, exist_ok=True)
+
 
 # Describe the image using Groq API (Llama)
 def describe_image_with_groq(encoded_image):
@@ -95,6 +85,7 @@ def describe_image_with_groq(encoded_image):
         print(f"Failed to process image with Groq: {e}")
         return None
 
+
 # Function to classify an image description and get confidence scores
 def classify_description(description, nft_rarities, character_threshold=0.3, equipment_threshold=0.3):
     categories = character_labels + ranged_weapon_labels + melee_weapon_labels + magic_weapon_labels + explosive_weapon_labels + defense_labels
@@ -113,11 +104,19 @@ def classify_description(description, nft_rarities, character_threshold=0.3, equ
             "Defense": 0
         }
 
-        # Check if nft_rarities exist before applying boosts
+        character_boost_list = ["fur", "eye", "eyes", "mouth", "skin", "face", "hair", "head", "neck", "body",
+                                "birth-chain", "ethnicity", "complexion", "ear", "eyeball", "nose", "teeth", "hand",
+                                "leg"]
+        ranged_weapon_boost_list = ["ammo", "calibre", "scope"]
+        melee_weapon_boost_list = ["blade", "sharpness"]
+        magic_weapon_boost_list = ["mana"]
+        explosive_weapon_boost_list = []
+        defense_boost_list = ["defense"]
+
+        # Apply trait boosts to confidence scores
         if nft_rarities and "rarities" in nft_rarities:
             for trait in nft_rarities["rarities"]:
                 trait_type = trait["traitType"].lower()
-
                 if trait_type in character_boost_list:
                     boosts["Character"] += 0.1
                 elif trait_type in ranged_weapon_boost_list:
@@ -131,13 +130,27 @@ def classify_description(description, nft_rarities, character_threshold=0.3, equ
                 elif trait_type in defense_boost_list:
                     boosts["Defense"] += 0.1
 
+        # Calculate the average prevalence of the traits
+        average_prevalence = 0.5  # Default to 0.5 if no rarities are available
+        if nft_rarities and "rarities" in nft_rarities:
+            excluded_traits = ["background", "setting"]
+            prevalences = [trait.get("prevalence", 0.5) for trait in nft_rarities["rarities"] if
+                           trait["traitType"] not in excluded_traits]
+            if prevalences:
+                average_prevalence = sum(prevalences) / len(prevalences)
+
         # Apply the boost to the corresponding category
         boosted_scores = {
-            "Character": max([scores[i] for i, label in enumerate(labels) if label in character_labels]) + boosts["Character"],
-            "Ranged Weapon": max([scores[i] for i, label in enumerate(labels) if label in ranged_weapon_labels]) + boosts["Ranged Weapon"],
-            "Melee Weapon": max([scores[i] for i, label in enumerate(labels) if label in melee_weapon_labels]) + boosts["Melee Weapon"],
-            "Magic Weapon": max([scores[i] for i, label in enumerate(labels) if label in magic_weapon_labels]) + boosts["Magic Weapon"],
-            "Explosive Weapon": max([scores[i] for i, label in enumerate(labels) if label in explosive_weapon_labels]) + boosts["Explosive Weapon"],
+            "Character": max([scores[i] for i, label in enumerate(labels) if label in character_labels]) + boosts[
+                "Character"],
+            "Ranged Weapon": max([scores[i] for i, label in enumerate(labels) if label in ranged_weapon_labels]) +
+                             boosts["Ranged Weapon"],
+            "Melee Weapon": max([scores[i] for i, label in enumerate(labels) if label in melee_weapon_labels]) + boosts[
+                "Melee Weapon"],
+            "Magic Weapon": max([scores[i] for i, label in enumerate(labels) if label in magic_weapon_labels]) + boosts[
+                "Magic Weapon"],
+            "Explosive Weapon": max([scores[i] for i, label in enumerate(labels) if label in explosive_weapon_labels]) +
+                                boosts["Explosive Weapon"],
             "Defense": max([scores[i] for i, label in enumerate(labels) if label in defense_labels]) + boosts["Defense"]
         }
 
@@ -185,18 +198,26 @@ def generate_stat(floor_price, prevalence, stat_type="general"):
 
 # Generate stats based on floor price and trait prevalence
 def generate_stats(category, equipment_type, floor_price=0, rarity=None):
+    average_prevalence = 0.5  # Default prevalence
+    if rarity and "rarities" in rarity:
+        excluded_traits = ["background", "setting"]
+        prevalences = [trait.get("prevalence", 0.5) for trait in rarity["rarities"] if
+                       trait["traitType"] not in excluded_traits]
+        if prevalences:
+            average_prevalence = sum(prevalences) / len(prevalences)
+
     if category == "Character":
-        health = generate_stat(floor_price, random.uniform(0.2, 0.8), "health")
-        intelligence = generate_stat(floor_price, random.uniform(0.2, 0.8), "intelligence")
-        stamina = generate_stat(floor_price, random.uniform(0.2, 0.8), "stamina")
+        health = generate_stat(floor_price, average_prevalence, "health")
+        intelligence = generate_stat(floor_price, average_prevalence, "intelligence")
+        stamina = generate_stat(floor_price, average_prevalence, "stamina")
         return {
             "Health": health,
             "Intelligence": intelligence,
             "Stamina": stamina
         }
     elif category == "Equipment" and equipment_type:
-        attack = generate_stat(floor_price, random.uniform(0.2, 0.8), "attack")
-        durability = generate_stat(floor_price, random.uniform(0.2, 0.8), "durability")
+        attack = generate_stat(floor_price, average_prevalence, "attack")
+        durability = generate_stat(floor_price, average_prevalence, "durability")
         return {
             "Attack": attack,
             "Durability": durability
@@ -211,8 +232,10 @@ def generate_stats(category, equipment_type, floor_price=0, rarity=None):
             "Attack": None
         }
 
+
 # Process the images and classify each one
 def process_image(nft):
+    global image_cache_dir
     image_url = nft["image"]["cachedUrl"]
     floor_price = nft.get("floor_price", 0)
     rarity = nft.get("rarity", None)
@@ -220,6 +243,29 @@ def process_image(nft):
     try:
         # Attempt to download the image asynchronously
         async def download_image(image_url):
+            # Skip caching if the content type is gif or video
+            cache_image = nft["image"]["contentType"] not in ["image/gif", "video/mp4", "video/webm"]
+
+            # Check if the image is already in the cache
+            image_filename = os.path.join(image_cache_dir, os.path.basename(image_url))
+            if cache_image and os.path.exists(image_filename):
+                with open(image_filename, "rb") as img_file:
+                    return base64.b64encode(img_file.read()).decode("utf-8")
+
+            # Download the image if not cached
+            async with aiohttp.ClientSession() as session:
+                async with session.get(image_url, ssl=False) as response:
+                    if response.status == 200:
+                        image_data = await response.read()
+                        if cache_image:
+                            # Save the image to cache
+                            with open(image_filename, "wb") as img_file:
+                                img_file.write(image_data)
+                        image = Image.open(BytesIO(image_data)).convert("RGBA")
+                        buffered = BytesIO()
+                        image.save(buffered, format="PNG")
+                        return base64.b64encode(buffered.getvalue()).decode("utf-8")
+            return None
             # Check if the image is already in the cache
             image_filename = os.path.join(image_cache_dir, os.path.basename(image_url))
             if os.path.exists(image_filename):
@@ -265,23 +311,28 @@ def process_image(nft):
         print(f"Failed to process image from {image_url}: {e}")
         return None
 
+
 # Multiprocessing wrapper to handle multiple image downloads and processing
 def process_nft_images_multiprocessing(nft_data):
+    num_processes = max(1, multiprocessing.cpu_count() - 1)
     processed_nfts = []
     index = 0
     while len(processed_nfts) < 5 and index < len(nft_data):
-        nft = nft_data[index]
-        processed_nft = process_image(nft)
-        if processed_nft and "AICategory" in processed_nft:
-            processed_nfts.append(processed_nft)
+        with multiprocessing.Pool(num_processes) as pool:
+            result = pool.map(process_image, [nft_data[index]])
+            processed_nft = result[0]
+            if processed_nft and "AICategory" in processed_nft:
+                processed_nfts.append(processed_nft)
         index += 1
     return processed_nfts
+
 
 # Save the updated JSON data to a new file
 def save_updated_json(updated_nft_data):
     output = {"NFT_Data": [nft for nft in updated_nft_data if nft is not None]}
     with open("aiJson/updated_nft_data.json", "w") as file:
         json.dump(output, file, indent=4)
+
 
 if __name__ == "__main__":
     # Process the NFTs and generate the stats using multiprocessing
