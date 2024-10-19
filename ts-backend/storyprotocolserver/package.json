@@ -1,0 +1,34 @@
+{
+  "name": "sp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "create-collection": "ts-node scripts/utils/createSpgNftCollection.ts",
+    "metadata-example": "ts-node scripts/metadataExample.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ethereumjs/tx": "^5.4.0",
+    "@pinata/sdk": "^2.1.0",
+    "@story-protocol/core-sdk": "^1.0.0-rc.23",
+    "ethereumjs-tx": "^2.1.2",
+    "ethers": "^6.13.3",
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "viem": "^2.21.18",
+    "web3": "^4.13.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}
