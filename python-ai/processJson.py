@@ -177,10 +177,10 @@ def classify_description(description, nft_rarities, character_threshold=0.3, equ
 # Helper function to generate a stat based on the floor price and prevalence
 def generate_stat(floor_price, prevalence, stat_type="general"):
     base_stat = 1 + floor_price * 65  # Base stat scaled by floor price (range 1-100)
-    rarity_multiplier = (1 - prevalence) * 25  # Rarer traits give a higher bonus
+    rarity_multiplier = (1 - prevalence) * 35  # Rarer traits give a higher bonus
 
-    # Add randomness to the final stat (small random factor +/- 25% around the calculated stat)
-    random_factor = random.uniform(-0.25, 0.25)
+    # Add randomness to the final stat (small random factor +/- 45% around the calculated stat)
+    random_factor = random.uniform(-0.45, 0.45)
 
     # Final stat is base stat plus rarity bonus with added randomness
     final_stat = base_stat + rarity_multiplier * 0.5
