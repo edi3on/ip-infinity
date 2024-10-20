@@ -3,6 +3,5 @@ transformers
 pillow
 groq
 python-dotenv
-protobuf
-evaluate
-cairosvg
+
+
