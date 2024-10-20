@@ -18,6 +18,6 @@ The code is very basic right now, not meant for official deployment.
 - /mintLicense : This endpoint is meant for when others would like to purchase a license for anothers IPA (story protocol)
 - /getRevenue : This endpoint is meant for when people would like to see how much revenue they have made off royalties (story protocol)
 - /claimRevenue : This endpoint is meant for when users want to claim their revenue from royalties (story protocol)
-- /giverep : Thsi endpoint is meant to transfer our ERC-20 reputation tokens to the users wallet (Skale, Polygon, Rootstock, Story)
+- /giverep : This endpoint is meant to transfer our ERC-20 reputation tokens to the users wallet (Skale, Polygon, Rootstock, Story)
 
 
