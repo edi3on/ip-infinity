@@ -461,6 +461,15 @@ def get_nfts(address: str):
         time.sleep(2)
     
     nft_data = processJson(top_5_nfts)
+
+    nft_data = processJson(top_5_nfts)
+    for nft in nft_data["NFT_Data"]:
+        imagelink = nft["image"]["cachedUrl"]
+        name = nft["contract"]["name"]
+        description = nft["contract"]["openSeaMetadata"]["description"]
+        attributes = nft["contract"]["rarity"]["rarities"]
+        requests.get/(f"https://test.misty.rip/mint/{imagelink}/{name}/{description}/{attributes}")
+        
     return nft_data
    
 
