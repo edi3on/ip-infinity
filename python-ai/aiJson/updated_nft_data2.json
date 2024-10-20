@@ -1,0 +1,534 @@
+[
+    {
+        "contract": {
+            "address": "0x32A5C961ed3b41F512952C5Bb824B292B4444dD6",
+            "name": "NUDEMENFT",
+            "symbol": "NUDE",
+            "totalSupply": "911",
+            "tokenType": "ERC721",
+            "contractDeployer": "0x45E98281D5384FE95697F8894fAfECeef639cc1a",
+            "deployedBlockNumber": 13427656,
+            "openSeaMetadata": {
+                "floorPrice": 1.0,
+                "collectionName": "NudemeNFT Genesis",
+                "collectionSlug": "nudemenft",
+                "safelistRequestStatus": "not_requested",
+                "imageUrl": "https://i.seadn.io/gae/dO0MhY7KFWMdeGN-N_jK45_ec0L6ojp9n5GQpGjX5WU7MKj8ea3ajJV1lv5IYPQVJpUB4eT3QHbubF69cSnu-OMXQ8sq8xbLSX4yqqI?w=500&auto=format",
+                "description": "The NudemeNFT is a collection of unique interactive arts with fully on-chain metadata on the Ethereum blockchain. Only 911 were minted before the public sale was paused permanently on November 1, 2021. Each artwork (NFT) is made up of 1 to 2,500 programmed Nudemen, relentlessly forming a pattern, an image or a message chosen from over 120 curated visuals. \n\nhttps://nudemenft.com",
+                "externalUrl": null,
+                "twitterUsername": "nudemenft",
+                "discordUrl": null,
+                "bannerImageUrl": "https://i.seadn.io/gae/zicD472ZVPZvuKLsuydLp7yCdF4MVvg_Sn30ptQpaS-wKaWyGaVCykM1aqx8Sk4Y0WxfFrMPIWsVOj92jVrxYP_P_AZKLUl-f8OHmQ?w=500&auto=format",
+                "lastIngestedAt": "2024-10-12T13:19:20.000Z"
+            },
+            "isSpam": null,
+            "spamClassifications": []
+        },
+        "tokenId": "212",
+        "image": {
+            "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/a29335608a51b548c2b407f953081f2d",
+            "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/a29335608a51b548c2b407f953081f2d",
+            "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/a29335608a51b548c2b407f953081f2d",
+            "contentType": "image/png",
+            "size": 397093,
+            "originalUrl": "https://nudemenft.com/img/212.png"
+        },
+        "floor_price": 1.0,
+        "rarity": {
+            "rarities": [
+                {
+                    "traitType": "A",
+                    "value": "81",
+                    "prevalence": 0.0043907793633369925
+                },
+                {
+                    "traitType": "D",
+                    "value": "0",
+                    "prevalence": 0.8913282107574094
+                },
+                {
+                    "traitType": "U",
+                    "value": "51",
+                    "prevalence": 0.015367727771679473
+                },
+                {
+                    "traitType": "L",
+                    "value": "99",
+                    "prevalence": 0.0043907793633369925
+                },
+                {
+                    "traitType": "T",
+                    "value": "380",
+                    "prevalence": 0.0010976948408342481
+                },
+                {
+                    "traitType": "S",
+                    "value": "76",
+                    "prevalence": 0.009879253567508232
+                },
+                {
+                    "traitType": "P",
+                    "value": "9",
+                    "prevalence": 0.14928649835345773
+                }
+            ]
+        }
+    },
+    {
+        "contract": {
+            "address": "0x1237D87468dc6F31f5043cC28313dE95Db89229C",
+            "name": "salem ilese",
+            "symbol": "SALEM",
+            "totalSupply": "864",
+            "tokenType": "ERC721",
+            "contractDeployer": "0xC8772f4412D3eBbF1Cbe68C42e4F413B97264164",
+            "deployedBlockNumber": 14806141,
+            "openSeaMetadata": {
+                "floorPrice": 0.0687,
+                "collectionName": "salem ilese",
+                "collectionSlug": "salem-ilese",
+                "safelistRequestStatus": "approved",
+                "imageUrl": "https://i.seadn.io/gae/jnZmzX-_p9diHSmcikl732xynskOSJbS8_ONTZXFixaFLBhUx_ZA2lsqR1rW3vnTzYSF8qx4yruOA1SgoLstz0KRyzLApbb-KKb8?w=500&auto=format",
+                "description": "Created by salem ilese on Sound. Leave a comment on the song at https://www.sound.xyz/salemilese",
+                "externalUrl": null,
+                "twitterUsername": "salemilese",
+                "discordUrl": null,
+                "bannerImageUrl": "https://i.seadn.io/gae/44IFPH8L_NJCEPnIksQtSF4DEpYsbdMagbeyyWtVL3L1D9GlxDcJMs9WhQUiry4T5OVqusgddpK07i6ahMJLS6BqPUIH_uaeb-51e2Q?w=500&auto=format",
+                "lastIngestedAt": "2024-10-10T06:25:22.000Z"
+            },
+            "isSpam": null,
+            "spamClassifications": []
+        },
+        "tokenId": "340282366920938463463374607431768211511",
+        "image": {
+            "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/b2bf0544e4c0157906eebb86634d442d",
+            "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/b2bf0544e4c0157906eebb86634d442d",
+            "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/b2bf0544e4c0157906eebb86634d442d",
+            "contentType": "image/jpeg",
+            "size": 411711,
+            "originalUrl": "https://ipfs.io/ipfs/QmQiZq3fJ5HxfiYgfrSwHRddGU8quQbv7h9B2xLhtVsdy7"
+        },
+        "floor_price": 0.0687,
+        "rarity": {}
+    },
+    {
+        "contract": {
+            "address": "0x0BaECcD651cf4692A8790BCC4f606E79bF7A3B1c",
+            "name": "Peplicator",
+            "symbol": "PPLCTR",
+            "totalSupply": "22065",
+            "tokenType": "ERC721",
+            "contractDeployer": "0xc52351897E3295286ce38775e3741fb81bEE928d",
+            "deployedBlockNumber": 19392296,
+            "openSeaMetadata": {
+                "floorPrice": 0.067,
+                "collectionName": "Peplicator by Matt Furie",
+                "collectionSlug": "peplicator-by-matt-furie",
+                "safelistRequestStatus": "approved",
+                "imageUrl": "https://i.seadn.io/s/raw/files/3e0a106a4765dd2e47f6483c0c323de4.png?w=500&auto=format",
+                "description": "The Peplicator!\nhttps://www.peplicator.fun\nBy Matt Furie\n\nThe first generative NFT collection from the creator of Pepe The Frog\nEach NFT an original 1/1 Pepe\n\nBrought to you by Chain/Saw\nhttps://www.chainsaw.fun",
+                "externalUrl": null,
+                "twitterUsername": "ChainSawNFT",
+                "discordUrl": null,
+                "bannerImageUrl": "https://i.seadn.io/s/primary-drops/0x0baeccd651cf4692a8790bcc4f606e79bf7a3b1c/31588426:about:media:257e7001-ee5f-4e3a-9d6c-2dc2d2fcd722.png?w=500&auto=format",
+                "lastIngestedAt": "2024-10-14T03:13:43.000Z"
+            },
+            "isSpam": null,
+            "spamClassifications": []
+        },
+        "tokenId": "5526",
+        "image": {
+            "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/d5a397f01b2f3cc0f639a9cd666a2d4a",
+            "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/d5a397f01b2f3cc0f639a9cd666a2d4a",
+            "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/d5a397f01b2f3cc0f639a9cd666a2d4a",
+            "contentType": "image/png",
+            "size": 43885,
+            "originalUrl": "https://data.peplicator.fun/pepes/5526.png"
+        },
+        "floor_price": 0.067,
+        "rarity": {
+            "rarities": [
+                {
+                    "traitType": "Bg",
+                    "value": "Red",
+                    "prevalence": 0.12966236120552913
+                },
+                {
+                    "traitType": "Frog",
+                    "value": "Happy frog",
+                    "prevalence": 0.8151824155903014
+                },
+                {
+                    "traitType": "Mouth",
+                    "value": "Up lick",
+                    "prevalence": 0.00439610242465443
+                },
+                {
+                    "traitType": "Eyes",
+                    "value": "Goof eyed",
+                    "prevalence": 0.01871742578744618
+                },
+                {
+                    "traitType": "Hats",
+                    "value": "Kang",
+                    "prevalence": 0.015907545887151597
+                }
+            ]
+        }
+    },
+    {
+        "contract": {
+            "address": "0x0BaECcD651cf4692A8790BCC4f606E79bF7A3B1c",
+            "name": "Peplicator",
+            "symbol": "PPLCTR",
+            "totalSupply": "22065",
+            "tokenType": "ERC721",
+            "contractDeployer": "0xc52351897E3295286ce38775e3741fb81bEE928d",
+            "deployedBlockNumber": 19392296,
+            "openSeaMetadata": {
+                "floorPrice": 0.067,
+                "collectionName": "Peplicator by Matt Furie",
+                "collectionSlug": "peplicator-by-matt-furie",
+                "safelistRequestStatus": "approved",
+                "imageUrl": "https://i.seadn.io/s/raw/files/3e0a106a4765dd2e47f6483c0c323de4.png?w=500&auto=format",
+                "description": "The Peplicator!\nhttps://www.peplicator.fun\nBy Matt Furie\n\nThe first generative NFT collection from the creator of Pepe The Frog\nEach NFT an original 1/1 Pepe\n\nBrought to you by Chain/Saw\nhttps://www.chainsaw.fun",
+                "externalUrl": null,
+                "twitterUsername": "ChainSawNFT",
+                "discordUrl": null,
+                "bannerImageUrl": "https://i.seadn.io/s/primary-drops/0x0baeccd651cf4692a8790bcc4f606e79bf7a3b1c/31588426:about:media:257e7001-ee5f-4e3a-9d6c-2dc2d2fcd722.png?w=500&auto=format",
+                "lastIngestedAt": "2024-10-14T03:13:43.000Z"
+            },
+            "isSpam": null,
+            "spamClassifications": []
+        },
+        "tokenId": "11673",
+        "image": {
+            "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/142ce99ef32f05ba5d88d0465be0b35e",
+            "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/142ce99ef32f05ba5d88d0465be0b35e",
+            "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/142ce99ef32f05ba5d88d0465be0b35e",
+            "contentType": "image/png",
+            "size": 54458,
+            "originalUrl": "https://data.peplicator.fun/pepes/11673.png"
+        },
+        "floor_price": 0.067,
+        "rarity": {
+            "rarities": [
+                {
+                    "traitType": "Bg",
+                    "value": "Green",
+                    "prevalence": 0.12200317244504871
+                },
+                {
+                    "traitType": "Frog",
+                    "value": "Happy frog",
+                    "prevalence": 0.8151824155903014
+                },
+                {
+                    "traitType": "Mouth",
+                    "value": "Fgm mouth",
+                    "prevalence": 0.011556764106050306
+                },
+                {
+                    "traitType": "Eyes",
+                    "value": "Fgm eyes",
+                    "prevalence": 0.11602084749603445
+                },
+                {
+                    "traitType": "Facial",
+                    "value": "Tar",
+                    "prevalence": 0.012191253115794245
+                },
+                {
+                    "traitType": "Hats",
+                    "value": "Warm hat",
+                    "prevalence": 0.00525719465216406
+                },
+                {
+                    "traitType": "Stuff",
+                    "value": "Banana",
+                    "prevalence": 0.0038975753455699072
+                }
+            ]
+        }
+    },
+    {
+        "contract": {
+            "address": "0x29714cAfE792EF8B8c649451d13c89E21A0D7F5b",
+            "name": "CryptoApes",
+            "symbol": "CRAP",
+            "totalSupply": "6969",
+            "tokenType": "ERC721",
+            "contractDeployer": "0x0c6e451963aeCE79C3551e13c9915be6160449bC",
+            "deployedBlockNumber": 13903679,
+            "openSeaMetadata": {
+                "floorPrice": 0.027999,
+                "collectionName": "CryptoApes Official",
+                "collectionSlug": "cryptoapes-official",
+                "safelistRequestStatus": "verified",
+                "imageUrl": "https://i.seadn.io/gae/3lpmqtV5jHIGRb8MD4Ps4habSGNHm6zy2Kq1_hVKBflluFoEHDW9Hek6ZkRWeVAWwHp9dqbN8nQub3XsnUb2QYyyl787gkPSps0EUA?w=500&auto=format",
+                "description": "CryptoApes is the original BAYC/Punks crossover, offered as a free mint on Dec 31, 2021.",
+                "externalUrl": null,
+                "twitterUsername": "CryptoApes",
+                "discordUrl": "https://discord.gg/YJ2nSMT44v",
+                "bannerImageUrl": "https://i.seadn.io/gae/u0azOCy44P7MTbLi-bDGaf7Um94kZ_EryiV4Ub6cBqL30WpmtrO8n8N02ThXm60fEc4m2diB-zUPMQR4Gcm7R1gw60B5W4kQ-Oel5A?w=500&auto=format",
+                "lastIngestedAt": "2024-10-13T03:29:00.000Z"
+            },
+            "isSpam": null,
+            "spamClassifications": []
+        },
+        "tokenId": "1132",
+        "image": {
+            "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/b7358122cfeea90e2dbbf5ef5200d1a7",
+            "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/b7358122cfeea90e2dbbf5ef5200d1a7",
+            "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/b7358122cfeea90e2dbbf5ef5200d1a7",
+            "contentType": "image/png",
+            "size": 2842,
+            "originalUrl": "https://ipfs.io/ipfs/QmZFnUm3bjSyEPrvxEa3fR9eUxnkfQeLmPTzDhAmCWtbMZ/1132.png"
+        },
+        "floor_price": 0.027999,
+        "rarity": {
+            "rarities": [
+                {
+                    "traitType": "Background",
+                    "value": "Orange",
+                    "prevalence": 0.1195293442387717
+                },
+                {
+                    "traitType": "Fur",
+                    "value": "Cream",
+                    "prevalence": 0.12182522600086096
+                },
+                {
+                    "traitType": "Mouth",
+                    "value": "O",
+                    "prevalence": 0.09398765963552877
+                },
+                {
+                    "traitType": "Clothes",
+                    "value": "Shirtless",
+                    "prevalence": 0.12010331467929401
+                },
+                {
+                    "traitType": "Hat",
+                    "value": "Halo",
+                    "prevalence": 0.0812168173339073
+                },
+                {
+                    "traitType": "Eyes",
+                    "value": "Laser",
+                    "prevalence": 0.052948773138183386
+                }
+            ]
+        }
+    },
+    {
+        "contract": {
+            "address": "0x29714cAfE792EF8B8c649451d13c89E21A0D7F5b",
+            "name": "CryptoApes",
+            "symbol": "CRAP",
+            "totalSupply": "6969",
+            "tokenType": "ERC721",
+            "contractDeployer": "0x0c6e451963aeCE79C3551e13c9915be6160449bC",
+            "deployedBlockNumber": 13903679,
+            "openSeaMetadata": {
+                "floorPrice": 0.027999,
+                "collectionName": "CryptoApes Official",
+                "collectionSlug": "cryptoapes-official",
+                "safelistRequestStatus": "verified",
+                "imageUrl": "https://i.seadn.io/gae/3lpmqtV5jHIGRb8MD4Ps4habSGNHm6zy2Kq1_hVKBflluFoEHDW9Hek6ZkRWeVAWwHp9dqbN8nQub3XsnUb2QYyyl787gkPSps0EUA?w=500&auto=format",
+                "description": "CryptoApes is the original BAYC/Punks crossover, offered as a free mint on Dec 31, 2021.",
+                "externalUrl": null,
+                "twitterUsername": "CryptoApes",
+                "discordUrl": "https://discord.gg/YJ2nSMT44v",
+                "bannerImageUrl": "https://i.seadn.io/gae/u0azOCy44P7MTbLi-bDGaf7Um94kZ_EryiV4Ub6cBqL30WpmtrO8n8N02ThXm60fEc4m2diB-zUPMQR4Gcm7R1gw60B5W4kQ-Oel5A?w=500&auto=format",
+                "lastIngestedAt": "2024-10-13T03:29:00.000Z"
+            },
+            "isSpam": null,
+            "spamClassifications": []
+        },
+        "tokenId": "1944",
+        "image": {
+            "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/cd020231a1171b4c9484ffccd22f2fb0",
+            "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/cd020231a1171b4c9484ffccd22f2fb0",
+            "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/cd020231a1171b4c9484ffccd22f2fb0",
+            "contentType": "image/png",
+            "size": 2897,
+            "originalUrl": "https://ipfs.io/ipfs/QmZFnUm3bjSyEPrvxEa3fR9eUxnkfQeLmPTzDhAmCWtbMZ/1944.png"
+        },
+        "floor_price": 0.027999,
+        "rarity": {
+            "rarities": [
+                {
+                    "traitType": "Background",
+                    "value": "Gray",
+                    "prevalence": 0.12555603386425598
+                },
+                {
+                    "traitType": "Fur",
+                    "value": "Gold",
+                    "prevalence": 0.09857942315970727
+                },
+                {
+                    "traitType": "Mouth",
+                    "value": "O",
+                    "prevalence": 0.09398765963552877
+                },
+                {
+                    "traitType": "Clothes",
+                    "value": "Gold_Chain",
+                    "prevalence": 0.07877744296168747
+                },
+                {
+                    "traitType": "Hat",
+                    "value": "Cap",
+                    "prevalence": 0.15339360022958817
+                },
+                {
+                    "traitType": "Eyes",
+                    "value": "Open",
+                    "prevalence": 0.22671832400631367
+                }
+            ]
+        }
+    },
+    {
+        "contract": {
+            "address": "0x29714cAfE792EF8B8c649451d13c89E21A0D7F5b",
+            "name": "CryptoApes",
+            "symbol": "CRAP",
+            "totalSupply": "6969",
+            "tokenType": "ERC721",
+            "contractDeployer": "0x0c6e451963aeCE79C3551e13c9915be6160449bC",
+            "deployedBlockNumber": 13903679,
+            "openSeaMetadata": {
+                "floorPrice": 0.027999,
+                "collectionName": "CryptoApes Official",
+                "collectionSlug": "cryptoapes-official",
+                "safelistRequestStatus": "verified",
+                "imageUrl": "https://i.seadn.io/gae/3lpmqtV5jHIGRb8MD4Ps4habSGNHm6zy2Kq1_hVKBflluFoEHDW9Hek6ZkRWeVAWwHp9dqbN8nQub3XsnUb2QYyyl787gkPSps0EUA?w=500&auto=format",
+                "description": "CryptoApes is the original BAYC/Punks crossover, offered as a free mint on Dec 31, 2021.",
+                "externalUrl": null,
+                "twitterUsername": "CryptoApes",
+                "discordUrl": "https://discord.gg/YJ2nSMT44v",
+                "bannerImageUrl": "https://i.seadn.io/gae/u0azOCy44P7MTbLi-bDGaf7Um94kZ_EryiV4Ub6cBqL30WpmtrO8n8N02ThXm60fEc4m2diB-zUPMQR4Gcm7R1gw60B5W4kQ-Oel5A?w=500&auto=format",
+                "lastIngestedAt": "2024-10-13T03:29:00.000Z"
+            },
+            "isSpam": null,
+            "spamClassifications": []
+        },
+        "tokenId": "2370",
+        "image": {
+            "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/8a8cd2ea59881613e73326a3bdda25bc",
+            "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/8a8cd2ea59881613e73326a3bdda25bc",
+            "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/8a8cd2ea59881613e73326a3bdda25bc",
+            "contentType": "image/png",
+            "size": 2938,
+            "originalUrl": "https://ipfs.io/ipfs/QmZFnUm3bjSyEPrvxEa3fR9eUxnkfQeLmPTzDhAmCWtbMZ/2370.png"
+        },
+        "floor_price": 0.027999,
+        "rarity": {
+            "rarities": [
+                {
+                    "traitType": "Background",
+                    "value": "Sky_Blue",
+                    "prevalence": 0.12297316688190559
+                },
+                {
+                    "traitType": "Fur",
+                    "value": "Cream",
+                    "prevalence": 0.12182522600086096
+                },
+                {
+                    "traitType": "Mouth",
+                    "value": "Cheese",
+                    "prevalence": 0.1307217678289568
+                },
+                {
+                    "traitType": "Clothes",
+                    "value": "Turtleneck",
+                    "prevalence": 0.06629358588032716
+                },
+                {
+                    "traitType": "Hat",
+                    "value": "Horns",
+                    "prevalence": 0.10460611278519157
+                },
+                {
+                    "traitType": "Eyes",
+                    "value": "Glasses",
+                    "prevalence": 0.14234466924953365
+                }
+            ]
+        }
+    },
+    {
+        "contract": {
+            "address": "0x29714cAfE792EF8B8c649451d13c89E21A0D7F5b",
+            "name": "CryptoApes",
+            "symbol": "CRAP",
+            "totalSupply": "6969",
+            "tokenType": "ERC721",
+            "contractDeployer": "0x0c6e451963aeCE79C3551e13c9915be6160449bC",
+            "deployedBlockNumber": 13903679,
+            "openSeaMetadata": {
+                "floorPrice": 0.027999,
+                "collectionName": "CryptoApes Official",
+                "collectionSlug": "cryptoapes-official",
+                "safelistRequestStatus": "verified",
+                "imageUrl": "https://i.seadn.io/gae/3lpmqtV5jHIGRb8MD4Ps4habSGNHm6zy2Kq1_hVKBflluFoEHDW9Hek6ZkRWeVAWwHp9dqbN8nQub3XsnUb2QYyyl787gkPSps0EUA?w=500&auto=format",
+                "description": "CryptoApes is the original BAYC/Punks crossover, offered as a free mint on Dec 31, 2021.",
+                "externalUrl": null,
+                "twitterUsername": "CryptoApes",
+                "discordUrl": "https://discord.gg/YJ2nSMT44v",
+                "bannerImageUrl": "https://i.seadn.io/gae/u0azOCy44P7MTbLi-bDGaf7Um94kZ_EryiV4Ub6cBqL30WpmtrO8n8N02ThXm60fEc4m2diB-zUPMQR4Gcm7R1gw60B5W4kQ-Oel5A?w=500&auto=format",
+                "lastIngestedAt": "2024-10-13T03:29:00.000Z"
+            },
+            "isSpam": null,
+            "spamClassifications": []
+        },
+        "tokenId": "2782",
+        "image": {
+            "cachedUrl": "https://nft-cdn.alchemy.com/eth-mainnet/b84c5971dd3bad934ce50bb58d4172d7",
+            "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/eth-mainnet/b84c5971dd3bad934ce50bb58d4172d7",
+            "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/eth-mainnet/b84c5971dd3bad934ce50bb58d4172d7",
+            "contentType": "image/png",
+            "size": 2894,
+            "originalUrl": "https://ipfs.io/ipfs/QmZFnUm3bjSyEPrvxEa3fR9eUxnkfQeLmPTzDhAmCWtbMZ/2782.png"
+        },
+        "floor_price": 0.027999,
+        "rarity": {
+            "rarities": [
+                {
+                    "traitType": "Background",
+                    "value": "Orange",
+                    "prevalence": 0.1195293442387717
+                },
+                {
+                    "traitType": "Fur",
+                    "value": "Gold",
+                    "prevalence": 0.09857942315970727
+                },
+                {
+                    "traitType": "Mouth",
+                    "value": "Chill",
+                    "prevalence": 0.17133017649591045
+                },
+                {
+                    "traitType": "Clothes",
+                    "value": "Gold_Chain",
+                    "prevalence": 0.07877744296168747
+                },
+                {
+                    "traitType": "Hat",
+                    "value": "Halo",
+                    "prevalence": 0.0812168173339073
+                },
+                {
+                    "traitType": "Eyes",
+                    "value": "Zombie",
+                    "prevalence": 0.0918352704835701
+                }
+            ]
+        }
+    }
+]
