@@ -9,6 +9,8 @@ import { getClaimableRevenue  } from '../scripts/royaltyModule'
 import { claimRevenue } from '../scripts/royaltyModule'
 import { main as mintLicense} from '../scripts/mintLicense'
 import { sendPolyErc20Token, sendStoryErc20Token, sendSkaleErc20Token, sendRSErc20Token } from '../scripts/sendToken';
+import dotenv from 'dotenv';
+dotenv.config();
  
 
 const app = express();
