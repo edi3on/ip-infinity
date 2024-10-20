@@ -19,7 +19,7 @@ The AI was implemented by Elliot. Meta’s Llama 3.2 vision model takes images o
 
 The Unreal Engine part can be divided into two different sections: the environment and the gameplay. The environment is made by Tibet. We wanted something a little more than just a basic world to make it look more appealing, and we wanted to change it up a bit. This led us to build a procedurally generated landscape, basically meaning the landscape randomly makes itself under a controlled system. Another idea was to make a dungeon, so we integrated both ideas and made the dungeon procedurally generated. The Idea worked, and we were able to download a bunch of meshes, put them into our empty dungeon shell, and make a great space to fight the user's favorite NFT. There are 3 rooms on each of our two maps, and the insides of the rooms are able to change every time you reboot the game. With our dark and creepy theme involving lots of medieval-era objects, it's a genuinely thrilling experience to play in.
 
-The actual gameplay part is built by Edison.
+The actual gameplay part is built by Edison. While the spotlight is focused on thr AI and how we are integrating it to our sponsers, the game provides an example of the AI system. The game showcases how NFTs can be properly integrated into a game.
 
 ### ts-backend
 
@@ -55,7 +55,7 @@ The story allows users to collaborate with each other really easily without need
 
 ### ENS
 
-ENS allows us to get the user’s wallet very easily. ENS also allows us to easily identify users; by using a very readable username, the player is al
+ENS allows us to get the user’s wallet very easily. ENS also allows us to easily identify users, ENS serves as a built in username system for us.
 
 ### Layer two chains
 -Polygon
@@ -75,7 +75,7 @@ These allow us to deploy future commercial tokens with monetary value and our cu
 
 -Getting images loaded into ui in unreal engine
 
--Sharing ue5 with teammates
+-coordinating a workflow with the team
 
 ## What we learned
 
@@ -83,11 +83,11 @@ Tibet: I learned that making a landscape in Unreal Engine is not easy and that i
 
 Elliot: I learned a lot more about AI, working with .json files, and GitHub. I also experienced coding as a team, which was both challenging and rewarding.
 
-Edison: 
+Edison: I learned that ue5 front end is not as easy as it seems. Although you could just put a couple buttons in, it is pretty hard to make it look good.
 
 ## What’s next
 
-Expanding the map and going from just a few handmade rooms to the PCG, I made all the rooms for myself.
+Expanding the map to be fully procedually generated and adding many more ways to generate NFTs in the map.
 
 Authentication: have the user sign message with their wallet
 
@@ -95,4 +95,4 @@ Increasing accuracy of categorization with fine-tuned models
 
 Integration of a monetized reward system from Royalties
 
-Implementing more advanced game mechanics and interactions
+Implementing more advanced game mechanics and interactions with AI
