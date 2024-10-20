@@ -30,6 +30,7 @@ The code is very basic right now, not meant for official deployment.
   - You need to deploy it on the story, rootstock, polygon, and skale testnets
   - after deployment grab the token contract addresses for each
   - grab yourself a pinata.cloud JWT api key
+  - get yourself an alchemy api key
   - next run "npm run create-collection" after editing ./scripts/utils/createSpsNftCollection.ts
   - save the address of the collection outputted in consol
   - next fill out your .env from .env example
