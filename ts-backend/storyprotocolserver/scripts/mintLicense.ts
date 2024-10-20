@@ -24,8 +24,8 @@ export const main = async function createNFT() {
      });
      
     console.log(`License Token minted at transaction hash ${response.txHash}, License IDs: ${response.licenseTokenIds}`)
+    return response
 }
-main()
 
 
 
