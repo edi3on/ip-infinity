@@ -249,18 +249,18 @@ def generate_stats(category, equipment_type, floor_price=0, rarity=None):
         }
 
 
-# Process the images and classify each one
 def process_image(nft):
     global image_cache_dir
-    image_url = nft["image"]["cachedUrl"]
+    image_url = nft.get("image", {}).get("pngUrl")
+    if image_url is None:
+        image_url = nft.get("image", {}).get("cachedUrl")
     floor_price = nft.get("floor_price", 0)
     rarity = nft.get("rarity", None)
 
     try:
         # Attempt to download the image asynchronously
         async def download_image(image_url):
-            # Skip caching if the content type is gif or video
-            cache_image = nft["image"]["contentType"] not in ["image/gif", "video/mp4", "video/webm"]
+            cache_image = True
 
             # Check if the image is already in the cache
             image_filename = os.path.join(image_cache_dir, os.path.basename(image_url))
