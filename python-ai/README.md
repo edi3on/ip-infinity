@@ -7,9 +7,10 @@
 - Run the program
 - Go to https://[domain you set].com/v4/getnfts/[ENS]
 ## How it works
-
-
-- Once it generates the .json file of NFTs with metadata, it gets run through the code in processJson.py
+- a simple fastAPI server is started with an endpoint a user can call with an ENS
+- once the ENS is submitted Alchemy API is used to get all owned NFTs
+- we then sort through the top five nfts in floor price (you can increase but this is for testing), then we use Alchemy again to get rarities.  
+- Once we get the top five NFTs with metadata, it gets run through the function processJson (the ai)
 - Each image gets a generated text description from Meta's Llama 3.2 Vision model
 - The text descriptions are then sorted into a category by zero-shot classification model (DeBERTa)
 - Each NFT gets stats relevant to its category based on the collection floor price and the rarity of the NFTs traits
