@@ -25,7 +25,7 @@ The actual gameplay part is built by Edison.
 
 The backend was implemented by Kaan. He used Story’s SDK for minting NFTS and registering a new IPA for each NFT in the user's wallet.
 
-Royalties Module
+Royalties & Licensing Module
 
 - if someone wants to list their thing for commercial use, my server is called with the amount of rev-share the user wants and how much the minting fee should be. I then created and attached a license for that.
 - if someone wants to use their IP, my server is called, and a license is minted, which also creates the royalty vault
@@ -35,25 +35,15 @@ That is all for now, but in the future, we can expand on licensing and finish up
 Reputation
 
 - I deployed a contract on four different chains scale, story, rootstock, and polygon, and minted one token on each
-- along with royalties, we also have reputation points, so whenever an NFT is interacted with, their reputation can be increased by the use of these tokens
-- they work on all four chains
+- along with royalties, we also have reputation points, so whenever an NFT is interacted with, the owners reputation can be increased by the use of these tokens
+- It can be used on any L2 chain, and in this case I used, Polygon, Story, Skale, and Rootstock.
 
 Disputes 
 
 - where being made, ran into errors, and ran out of time
 - plan to integrate in the future
 
-Kaan script
 
-My main focus was to integrate all the sponsors, which included Story, Polygon, Skale, and Sootstock, into the project.
-
- For Story, I utilized their SDK to:
-
-1. Register IPAs (Intellectual Property assets) for all NFTs used in the game.
-2. allow users to choose which IPAs they want to list for commercial use and modify their licenses.
-3. Integrate the royalty module, allowing users to view or claim their revenue.
-
-In addition, I developed a reputation system that can be adapted to any L2 chain. In this case, I used Polygon, Skale, Story, and RootStock.
 
 ### 
 
