@@ -37,7 +37,6 @@ start = time.time()
 load_dotenv()
 key = ''
 
-# Load the JSON file containing NFT data
 
 
 # Define categories for classification
