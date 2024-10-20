@@ -20,7 +20,7 @@ import multiprocessing
 from dotenv import load_dotenv
 from groq import Groq
 import base64
-from transformers import BlipProcessor, BlipForConditionalGeneration, pipeline
+from transformers import pipeline
 from PIL import Image
 import torch
 from io import BytesIO
@@ -36,7 +36,6 @@ start = time.time()
 # Load environment variables
 load_dotenv()
 key = ''
-
 
 
 # Define categories for classification
@@ -58,11 +57,6 @@ defense_labels = [
 # Initialize Groq client for LLaMA
 client = Groq(api_key=key)
 
-# Initialize the BLIP model for image captioning
-blip_processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
-blip_model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base").to(
-    "cuda" if torch.cuda.is_available() else "cpu"
-)
 
 # Initialize zero-shot classification model using DeBERTa
 classifier = pipeline("zero-shot-classification", model="MoritzLaurer/DeBERTa-v3-base-mnli",
