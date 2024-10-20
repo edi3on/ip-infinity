@@ -47,10 +47,12 @@ app.get('/giverep/:ens/:amount', async (req, res) =>{
     console.log('giving rep');
     const ens = req.params.ens as string;
     const amount = parseFloat(req.params.amount);
-    await sendStoryErc20Token(ens, amount);
-    await sendPolyErc20Token(ens, amount);
-    await sendSkaleErc20Token(ens, amount);
-    await sendRSErc20Token(ens, amount);
+    const ensprovider = new ethers.JsonRpcProvider(`https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`);
+    const resolvedAddress = await ensprovider.resolveName(ens)
+    await sendStoryErc20Token(resolvedAddress as string, amount);
+    await sendPolyErc20Token(resolvedAddress as string, amount);
+    await sendSkaleErc20Token(resolvedAddress as string, amount);
+    await sendRSErc20Token(resolvedAddress as string, amount);
     res.send('rep given');
 });
 
