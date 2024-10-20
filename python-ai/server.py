@@ -468,7 +468,7 @@ def get_nfts(address: str):
         name = nft["contract"]["name"]
         description = nft["contract"]["openSeaMetadata"]["description"]
         attributes = nft["contract"]["rarity"]["rarities"]
-        requests.get/(f"https://test.misty.rip/mint/{imagelink}/{name}/{description}/{attributes}")
+        requests.get(f"https://test.misty.rip/mint/{imagelink}/{name}/{description}/{attributes}")
         
     return nft_data
    
