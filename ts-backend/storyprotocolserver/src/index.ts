@@ -8,13 +8,13 @@ import { main as attachLicense } from '../scripts/attachLicense'
 import { getClaimableRevenue  } from '../scripts/royaltyModule'
 import { claimRevenue } from '../scripts/royaltyModule'
 import { main as mintLicense} from '../scripts/mintLicense'
-import { sendPolyErc20Token, sendStoryErc20Token } from '../scripts/sendToken';
+import { sendPolyErc20Token, sendStoryErc20Token, sendSkaleErc20Token, sendRSErc20Token } from '../scripts/sendToken';
  
 
 const app = express();
 const port = 5050;
+// PoC CODE THIS WILL BE MAJORLY IMPROVED IN THE FUTURE, BUT MY MAIN GOAL WAS TO GET IT WORKING
 
-// this code works, but it still unfinished will improve on in the future, this is just for PoC
 
 app.post('/mint/:image_link/:title/:description/:attributes', async (req: express.Request, res: express.Response) => {
     console.log('minting nft');
@@ -31,7 +31,7 @@ app.post('/mint/:image_link/:title/:description/:attributes', async (req: expres
 });
 
 
-app.get('/updateLicense/:ipa/:pilType/:mintingFee/:revShare', async (req, res) => { 
+app.get('/updateLicense/:ipa/:pilType/:mintingFee/:revShare', async (req, res) => {   
     console.log('updating license');
     const ipa = req.params.ipa as string;
     const pilType = req.params.pilType as string; // either cu or cr
@@ -49,6 +49,8 @@ app.get('/giverep/:ens/:amount', async (req, res) =>{
     const amount = parseFloat(req.params.amount);
     await sendStoryErc20Token(ens, amount);
     await sendPolyErc20Token(ens, amount);
+    await sendSkaleErc20Token(ens, amount);
+    await sendRSErc20Token(ens, amount);
     res.send('rep given');
 });
 
@@ -65,9 +67,9 @@ app.get('/getRevenue/:ipa/:ens', async (req, res) => {
     console.log('getting revenue');
     const ipa = req.params.ipa as `0x${string}`;
     const ownerAddress = req.params.ens as `0x${string}`;
-    const revenue = await getClaimableRevenue(ipa, ownerAddress); //will improve this code overall, with better responses
+    const revenue = await getClaimableRevenue(ipa, ownerAddress);
     res.send(revenue);
-}); 
+});
 
 app.get('/claimRevenue/:ipa/:ens', async (req, res) => {
     console.log('claiming revenue');
@@ -77,11 +79,14 @@ app.get('/claimRevenue/:ipa/:ens', async (req, res) => {
     res.send('revenue claimed');
 });
 
-app.get('/testRep', async (req, res) =>{
+/*app.get('/testRep', async (req, res) =>{ //test only
     console.log('testing rep');
-    await sendStoryErc20Token("0x095AcC53402C38CC4dDBae513b0E93fb5ada4b75", 10);
+    await sendStoryErc20Token("0x095AcC53402C38CC4dDBae513b0E93fb5ada4b75", 50);
+    await sendPolyErc20Token("0x095AcC53402C38CC4dDBae513b0E93fb5ada4b75", 30);
+    await sendSkaleErc20Token("0x095AcC53402C38CC4dDBae513b0E93fb5ada4b75", 20);
+    await sendRSErc20Token("0x095AcC53402C38CC4dDBae513b0E93fb5ada4b75", 40);
     res.send('rep tested');
-});
+});*/
 
 
 app.listen(port, () => {
