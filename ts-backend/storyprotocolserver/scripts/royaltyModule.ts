@@ -63,6 +63,7 @@ export const getClaimableRevenue = async function (royaltyVaultIpId: `0x${string
         token: "0x91f6f05b08c16769d3c85867548615d270c42fc7"
     });
     console.log('Claimable Revenue: ', response3);
+    return response3
 }
 
 export const claimRevenue = async function(royaltyVaultIpId: `0x${string}`, ownerAddress: `0x${string}`){
@@ -84,5 +85,6 @@ export const claimRevenue = async function(royaltyVaultIpId: `0x${string}`, owne
         token: "0x91f6f05b08c16769d3c85867548615d270c42fc7"
 
     });
+    return response
 
 }
