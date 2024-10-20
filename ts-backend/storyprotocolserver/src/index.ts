@@ -16,7 +16,7 @@ const port = 5050;
 // PoC CODE THIS WILL BE MAJORLY IMPROVED IN THE FUTURE, BUT MY MAIN GOAL WAS TO GET IT WORKING
 
 
-app.post('/mint/:image_link/:title/:description/:attributes', async (req: express.Request, res: express.Response) => {
+app.get('/mint/:image_link/:title/:description/:attributes', async (req: express.Request, res: express.Response) => {
     console.log('minting nft');
     const {image_link, title, description, attributes } = req.params;
 
