@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from "fs";
-
+//an idea not used 
 export const setRoyalty = async function (ipaAddress: string, amount: number, adding: boolean){
     const royalitiesJson = readFileSync('scripts/database/royalties.json');
     const royalities = JSON.parse(royalitiesJson.toString());
